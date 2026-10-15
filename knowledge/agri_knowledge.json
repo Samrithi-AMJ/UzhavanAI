@@ -1,0 +1,218 @@
+[
+  {
+    "id": "soil-types-tn-india",
+    "title": "Major soil types of Tamil Nadu and India",
+    "category": "soil",
+    "crop": "general",
+    "source": "TNAU Agritech Portal",
+    "url": "https://agritech.tnau.ac.in/agriculture/agri_soilgroups.html",
+    "content": "Tamil Nadu's farmland is dominated by four broad soil groups: red soils (about 62% of the state), black soils (about 12%), laterite soils (about 3%) and coastal alluvial soils (about 7%). Red soils are further split into red loamy, red sandy, red sterile and deep red loamy types, and are generally light-textured, well-drained, and respond well to organic matter and nitrogen. Black soils (regosolic/vertisol type) are clay-rich, have high water-holding capacity, swell when wet and crack deeply when dry, and are naturally fertile in potassium and lime but often low in nitrogen and phosphorus. Laterite soils are highly weathered, acidic, and low in fertility, needing lime and organic amendments. Coastal alluvial soils are fertile but can be prone to salinity near the coast. Knowing which broad soil type a field falls into is the starting point for deciding drainage needs, lime or gypsum requirement, and fertilizer strategy — but it should always be confirmed with an actual soil test rather than assumed from district alone, since soil type can vary within a few kilometres."
+  },
+  {
+    "id": "soil-testing-why-how",
+    "title": "Why and how to test your soil before deciding inputs",
+    "category": "soil",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Soil Health Card",
+    "url": "https://agritech.tnau.ac.in/agriculture/agri_soil_soilhealthcard.html",
+    "content": "A soil test tells you what is actually in your field — pH, organic carbon, available nitrogen/phosphorus/potassium and key micronutrients — instead of guessing from crop symptoms alone. The Soil Health Card scheme gives farmers a simple, periodic rating of these parameters along with crop-wise fertilizer guidance for that specific soil. Two farmers growing the same crop in the same village can have very different nutrient status, so blanket fertilizer doses are only a rough starting point; the soil test result should override generic advice whenever the two disagree. Samples should be collected from multiple spots in a field at plough depth (avoiding bunds, tree bases and manure heaps), mixed, and a representative sub-sample sent to a soil testing lab or Krishi Vigyan Kendra (KVK). Testing every 2–3 years (and after major changes like new drainage work or heavy liming) is generally recommended. If a farmer has not had their soil tested recently, that is important context to flag before giving specific fertilizer-dose advice, since exact dosage should ultimately follow the lab's recommendation and local extension guidance rather than a generic online figure."
+  },
+  {
+    "id": "clay-soil-water-infiltration-drainage",
+    "title": "Clay soil, poor water infiltration and drainage management",
+    "category": "soil",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Problem Soils and their Management",
+    "url": "https://agritech.tnau.ac.in/pdf/3.pdf",
+    "content": "Soils with a high clay content (roughly 40% or more clay particles) commonly have infiltration rates below about 6 cm/day, which is classified as 'slow permeable' soil. Because water cannot move down through the profile quickly, rainfall or irrigation water pools and runs off the surface instead of soaking in, which increases erosion, keeps the root zone waterlogged and poorly aerated, and can lock up nutrients so that even a well-fertilized field still shows deficiency symptoms. This exact pattern — clay soil plus water not penetrating — is a textbook slow-permeable/impermeable soil problem, not a fertility problem, so fixing drainage first usually matters more than adding more fertilizer. Recommended management practices include: mixing in organic matter such as farmyard manure (FYM) or composted coir pith to improve soil structure; forming ridges and furrows (or broad raised beds with drainage furrows for rainfed black clay soils) so roots sit above standing water; providing open or subsurface drainage channels; contour or compartmental bunding to slow runoff and let more water infiltrate gradually rather than pond; and, where feasible, working in coarser sand or red soil to change the texture over time. Avoid over-irrigating clay soil — apply water in smaller, more frequent amounts rather than large single doses, since heavy single irrigations are what cause the worst waterlogging in these soils."
+  },
+  {
+    "id": "problem-soils-salinity-sodicity",
+    "title": "Saline and sodic (alkaline) soil management",
+    "category": "soil",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Problem Soils and their Management",
+    "url": "https://agritech.tnau.ac.in/pdf/3.pdf",
+    "content": "Salt-affected soils fall into two broad types: saline soils, which have a high concentration of soluble salts and show white salt crusts on the surface, and sodic (alkaline) soils, where excess sodium has degraded soil structure even though visible salt crusting may be less obvious. Poor drainage and continued use of poor-quality (saline or sodic) irrigation water are common causes — without adequate drainage, salts and sodium accumulate in the root zone instead of being flushed below it. Sodic soils in particular lose structure, becoming hard when dry and slick/impermeable when wet, which compounds any existing drainage problem. Management generally combines: improving drainage (open or subsurface drains) so salts can be leached downward and out of the root zone with good-quality water; applying gypsum to sodic soils to replace sodium with calcium on the clay exchange sites, improving structure; adding organic matter to improve aggregation; and choosing salt-tolerant crop varieties where reclamation will take time. Because reclamation measures (gypsum dose, drainage design) depend on the specific salinity/sodicity level from a soil or water test, a farmer suspecting salt-affected soil should get a soil and irrigation-water test done through their local agricultural extension office before investing in large-scale reclamation."
+  },
+  {
+    "id": "organic-matter-soil-structure",
+    "title": "Organic matter and soil structure improvement",
+    "category": "soil",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Integrated Nutrient Management",
+    "url": "http://www.agritech.tnau.ac.in/expert_system/paddy/nutrientmanagement.html",
+    "content": "Regardless of soil type, adding organic matter — farmyard manure (FYM), composted coir pith, press mud, green manure crops, or crop residue — is one of the most reliable ways to improve soil physical condition over time. In heavy clay soils it helps break up dense aggregates and improves infiltration and aeration; in sandy soils it improves water- and nutrient-holding capacity; and in all soils it feeds soil microbial life that in turn improves nutrient cycling. Integrated Nutrient Management (INM) is the general principle of combining organic sources (FYM, green manure, compost, biofertilizers) with chemical fertilizers rather than relying on either alone — this reduces the total chemical fertilizer needed for a given yield while improving long-term soil health. As a general starting point, incorporating well-decomposed organic manure at around 10–12.5 tonnes per hectare is a commonly recommended baseline for improving soil structure in problem soils, but exact quantities should be adjusted based on what is locally available and on soil test results, since over-application of any input — organic or chemical — can also cause imbalances."
+  },
+  {
+    "id": "drip-irrigation-fertigation-basics",
+    "title": "Drip irrigation and fertigation basics",
+    "category": "irrigation",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Drip Irrigation",
+    "url": "https://agritech.tnau.ac.in/agricultural_engineering/drip_irrigation.pdf",
+    "content": "Drip (trickle) irrigation delivers water slowly and directly to the plant's root zone through low-pressure pipes and drippers, rather than wetting the whole field. Because water is applied frequently in small amounts, soil moisture in the root zone stays close to field capacity, which typically improves both water-use efficiency and crop growth compared with flood irrigation, while sharply cutting water lost to runoff and deep percolation. It is especially well suited to horticultural crops, vegetables, sugarcane, cotton and groundnut, and to areas with limited or costly groundwater. Drip systems are generally not recommended on heavy clay or very gravelly soils without careful design, since water movement in those soils behaves differently than in medium-textured soils. Fertigation — injecting soluble fertilizer into the drip system — lets nutrients be applied in smaller, more frequent doses matched to crop demand, which studies at TNAU (Madurai and Coimbatore) have shown can both raise yield and reduce total fertilizer used, particularly for sugarcane, groundnut and cotton. Correct system design (dripper spacing, discharge rate, filtration for water quality) and a proper irrigation/fertigation schedule are essential — a poorly designed or unmaintained drip system will under- or over-water parts of the field, so getting local technical guidance for system design is recommended before installation."
+  },
+  {
+    "id": "irrigation-scheduling-general-principles",
+    "title": "General principles of irrigation scheduling",
+    "category": "irrigation",
+    "crop": "general",
+    "source": "General agronomic guidance",
+    "url": "https://www.nationalacademies.org/read/11880/chapter/8",
+    "content": "Irrigation scheduling is about deciding when to irrigate, and how much water to apply, so that water lost from the root zone since the last irrigation is replaced before the crop experiences stress — without over-watering. Two practical ways farmers can judge this without expensive equipment are: (1) checking soil moisture by feel/appearance at root depth (a handful of soil that just holds together when squeezed but doesn't drip water is usually adequate for most field crops), and (2) tracking crop growth stage, since water stress at certain critical stages (e.g. flowering, grain filling, tuber bulking) causes far more yield loss than the same stress at other stages. Over-irrigation is not simply 'safe' — besides wasting water and energy, it leaches nutrients (especially nitrogen) below the root zone, encourages waterlogging-related root diseases, and on clay soils in particular worsens existing drainage problems. Under-irrigation at critical growth stages, on the other hand, can cause irreversible yield loss even if water is added later. When advising a farmer on irrigation timing, the crop's current growth stage and the recent rainfall/soil-moisture situation both matter — if that information is not available, it is better to say so than to guess a fixed schedule."
+  },
+  {
+    "id": "rice-water-management-sri-awd",
+    "title": "Water management in rice: critical stages, AWD and SRI",
+    "category": "irrigation",
+    "crop": "rice",
+    "source": "TNAU Agritech Portal — Water Management in Rice",
+    "url": "http://www.agritech.tnau.ac.in/expert_system/paddy/cultivationpractices3.html",
+    "content": "Rice water demand is not uniform through the season: the panicle-initiation-to-flowering window uses roughly a third of total seasonal water and is the most sensitive stage to water shortage, followed by planting-to-panicle-initiation. Two water-saving approaches are widely promoted for rice in Tamil Nadu and elsewhere in India. Alternate Wetting and Drying (AWD) lets the field dry until fine hairline cracks appear before re-flooding to a shallow depth, rather than keeping continuous standing water — this can cut water use substantially with little or no yield penalty, and research also links it to lower pest pressure (e.g. planthoppers) since continuously flooded fields favor them. The System of Rice Intensification (SRI) similarly keeps the soil just moist (not flooded) during early growth, increasing irrigation depth only after panicle initiation. As a general practical rule, water should also be drained from the field about 7–10 days before harvest to allow the field to dry for easier harvesting. Farmers experiencing water stress can also use a foliar spray of Cycocel at very low, product-label concentration to reduce the impact of moisture stress, timed with split potassium application — but exact product rates should come from the label or local agricultural extension office rather than being guessed."
+  },
+  {
+    "id": "ipm-principles-economic-threshold",
+    "title": "Integrated Pest Management (IPM) principles and economic threshold",
+    "category": "pest",
+    "crop": "general",
+    "source": "FAO / general IPM literature",
+    "url": "https://www.fao.org/4/x5048e/x5048e07.htm",
+    "content": "Integrated Pest Management (IPM) means combining cultural, biological, mechanical and (only when needed) chemical methods to keep pests below a level that causes real economic loss — not eliminating every pest. Two core ideas underpin this: the Economic Injury Level (EIL), the lowest pest population that will actually cause economic damage, and the Economic Threshold Level (ETL), a lower trigger point at which control action should begin so the pest population doesn't reach the EIL. In practice this means: monitor the field regularly and count pests/damage rather than spraying on a fixed calendar; favour resistant varieties, crop rotation, field sanitation, proper spacing and balanced fertilization (excess nitrogen often increases pest and disease susceptibility) as the first line of defence; conserve natural enemies (spiders, parasitic wasps, predatory bugs) since indiscriminate spraying kills them too and can make pest problems worse afterward; and use chemical control as a targeted last step, based on actual field scouting against known threshold levels for that pest and crop, following the product label and local extension recommendation for choice and dose. This general framework applies across rice, cotton, vegetables and other crops, even though the exact threshold numbers and approved products differ by crop and region."
+  },
+  {
+    "id": "rice-stem-borer-leaf-folder",
+    "title": "Rice stem borer and leaf folder — identification and IPM",
+    "category": "pest",
+    "crop": "rice",
+    "source": "TNAU Agritech Portal / NIPHM IPM Package for Rice",
+    "url": "https://niphm.gov.in/IPMPackages/Rice.pdf",
+    "content": "Yellow stem borer (Scirpophaga incertulas) larvae bore into the stem, causing a 'dead heart' (dead central shoot) during vegetative growth and 'white ear' (empty, whitish panicle) at the reproductive stage. Leaf folder (Cnaphalocrocis medinalis) larvae fold rice leaves lengthwise and feed on the green tissue inside, leaving visible white/translucent streaks and folded leaf tips. Recommended IPM practices for both include: use resistant/tolerant varieties recommended for the region; clip seedling tips before transplanting (this cultural practice specifically reduces early stem borer and leaf folder establishment); avoid excess nitrogenous fertilizer, which makes plants more attractive and susceptible to these pests; set up light traps to monitor and reduce adult moth populations; conserve natural enemies such as spiders and parasitic wasps (e.g. Trichogramma species used in biological control programs); and drain field water where recommended, since some related pests are managed partly through water management. Chemical control should only be used once monitoring shows the pest has crossed the locally recommended economic threshold (guideline thresholds from IPM packages are roughly on the order of a couple of damaged leaves with larvae per hill for leaf folder, and similar low thresholds for stem borer at the nursery/tillering stage) — exact insecticide choice and dose should follow the current label and the local Department of Agriculture / Krishi Vigyan Kendra recommendation, since approved products and rates are periodically updated."
+  },
+  {
+    "id": "rice-brown-planthopper-management",
+    "title": "Brown planthopper (BPH) and white-backed planthopper in rice",
+    "category": "pest",
+    "crop": "rice",
+    "source": "TNAU Agritech Portal — Centre for Plant Protection Studies",
+    "url": "https://agritech.tnau.ac.in/ta/crop_protection/pdf/2024/CPPS-PSR%20Report-January%202024.pdf",
+    "content": "Brown planthopper (Nilaparvata lugens) and white-backed planthopper nymphs and adults cluster at the base of rice plants, above the waterline, and suck sap, which can cause a scorched, dried-up patch of plants known as 'hopper burn'; they can also transmit certain rice viruses. These pests thrive in warm, humid conditions and are favoured by continuously flooded fields and excessive nitrogen use. Recommended management: monitor hopper numbers at the plant base regularly; where population is high, drain standing water from the field and let it dry briefly, since planthoppers do poorly without standing water at the plant base; avoid excess nitrogen fertilization; conserve natural predators such as spiders (which feed on hoppers and moths); and consider Alternate Wetting and Drying (AWD) irrigation, which independent studies and TNAU field observations associate with lower planthopper incidence than continuous flooding, alongside its water-saving benefit. Neem-based botanical sprays (neem seed kernel extract or neem oil, at label-recommended concentration) are also used in integrated/organic programs against planthoppers. If chemical control is needed after monitoring confirms the threshold is crossed, the choice of insecticide and dose should follow the current recommendation from TNAU/local agricultural extension, since planthoppers are prone to developing resistance and recommended products change over time."
+  },
+  {
+    "id": "tomato-leaf-curl-virus",
+    "title": "Tomato leaf curl virus — symptoms, spread and management",
+    "category": "disease",
+    "crop": "tomato",
+    "source": "TNAU Agritech Portal — Tomato Diseases",
+    "url": "https://agritech.tnau.ac.in/crop_protection/tomato_diseases_6.html",
+    "content": "Tomato leaf curl virus (TLCV) causes severe stunting, downward rolling and crinkling of leaves, leathery and brittle older leaves, shortened internodes and a bushy appearance with excess lateral branching. It is a viral disease with no direct chemical cure once a plant is infected — management is entirely about preventing infection and controlling its insect vector. The virus is spread primarily by whiteflies (Bemisia tabaci), which pick up the virus from infected plants (including weeds and earlier tomato crops) and transmit it while feeding on healthy plants. Because it is vector-borne, management focuses on: raising or buying certified virus-free/resistant seedlings; using yellow sticky traps and reflective mulches to reduce whitefly numbers; removing and destroying infected plants promptly (roguing) so they don't act as a virus source for the whitefly to spread further; controlling nearby weed hosts; and using a fine insect-proof net over nurseries to keep whiteflies off young seedlings, which are especially vulnerable. If whitefly populations are high enough to need chemical control, the specific insecticide and dose should be based on current, locally approved recommendations for whitefly rather than a generic figure, since whitefly populations frequently develop resistance to individual insecticide classes. If a farmer describes curling, stunted, bushy tomato plants, this is a strong match for leaf curl virus, but confirming whitefly presence and checking neighbouring plants for the same pattern helps rule out simple physiological leaf curl (which can also be caused by heat/water stress or pruning) before concluding it is viral."
+  },
+  {
+    "id": "tomato-early-late-blight",
+    "title": "Tomato early blight vs late blight — telling them apart",
+    "category": "disease",
+    "crop": "tomato",
+    "source": "General plant pathology extension guidance (UF/IFAS, UW, Utah State Extension)",
+    "url": "https://ipm.ifas.ufl.edu/pdfs/Early_Blight.pdf",
+    "content": "Early blight (Alternaria solani) and late blight (Phytophthora infestans) are both common tomato fungal diseases but need different responses, and confusing them is a common mistake. Early blight typically starts on the OLDEST, lowest leaves as small brown-to-black spots that enlarge with a clear 'target' pattern of concentric rings and often a yellow halo; it spreads over weeks and is favoured by warm, humid conditions with wet foliage. Late blight instead shows irregular, water-soaked, greasy-looking greenish-grey patches that expand rapidly (within days, not weeks) into large dead areas, and — the key distinguishing sign — a cottony white mould often appears on the underside of the leaf at the lesion edge in humid conditions; late blight is favoured by cool, wet weather and can collapse an entire plant very quickly. For both diseases: avoid overhead watering (water the soil, not the leaves), water early in the day so foliage dries quickly, improve airflow through pruning/spacing, remove and destroy infected plant debris (don't compost it), and rotate out of tomato and other solanaceous crops (potato, brinjal/eggplant, chilli) for at least two seasons in affected fields. Because late blight can destroy a crop within days, a farmer describing rapidly spreading, water-soaked lesions with white fuzz underneath should be told this needs urgent attention and, if fungicide is needed, to consult local extension immediately for a currently approved product and correct dose rather than waiting."
+  },
+  {
+    "id": "wheat-rust-diseases",
+    "title": "Wheat rust diseases: leaf, stem and stripe (yellow) rust",
+    "category": "disease",
+    "crop": "wheat",
+    "source": "General plant pathology extension guidance",
+    "url": "https://pubs.nmsu.edu/_a/A415/",
+    "content": "Three related rust fungi affect wheat, named by where they appear and their colour. Leaf rust shows small, round, orange-to-reddish-brown powdery pustules mainly on leaves. Stem rust shows larger, oval, reddish-brown (later black) pustules mainly on stems and can weaken stems enough to cause lodging (plants falling over) in severe cases. Stripe (yellow) rust shows yellow, blister-like pustules typically arranged in stripes along the leaf, and is favoured by cool, humid conditions. All three spread as wind-blown spores and can build up quickly under favourable humid weather. General management: grow rust-resistant wheat varieties recommended for the local region (resistance is the single most effective and lowest-cost control); avoid excessive nitrogen fertilization, which tends to increase susceptibility and lodging risk; ensure good field sanitation and, where relevant, eliminate alternate weed hosts that let the fungus survive between wheat seasons; and monitor fields regularly during the cool/humid part of the season since early detection allows earlier, more effective response. If rust is confirmed and fungicide is being considered, the correct product, timing and dose should come from the current local agricultural extension recommendation, since effective fungicide timing (often just as symptoms first appear) and product choice can change between seasons as rust races and resistance evolve."
+  },
+  {
+    "id": "nutrient-management-inm-general",
+    "title": "General principles of fertilizer and nutrient management",
+    "category": "fertilizer",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Nutrient Management",
+    "url": "http://www.agritech.tnau.ac.in/expert_system/paddy/nutrientmanagement.html",
+    "content": "Good nutrient management starts from a soil test, not a fixed formula — the same crop can need quite different fertilizer amounts in two fields with different existing fertility. Where a soil test isn't available, state/university 'blanket' fertilizer recommendations (a general N:P2O5:K2O dose per crop, per region) are a reasonable fallback starting point, but they are averages and can over- or under-supply a specific field. Nitrogen is generally the most management-intensive nutrient because it is mobile in soil and easily lost (through leaching, runoff or volatilization), so it is usually applied in multiple split doses through the season (e.g. basal + tillering + later growth stages) rather than all at once — this improves the plant's ability to actually use it and reduces waste and environmental loss. Phosphorus, by contrast, moves very little in soil and is usually applied mostly or entirely as a basal (pre-planting) dose. Potassium is often split between basal and one or two later top-dressings, especially for crops sensitive to moisture stress or that are heavy potassium feeders (e.g. banana, sugarcane). Integrated Nutrient Management (INM) — combining organic sources (farmyard manure, compost, green manure, biofertilizers) with chemical fertilizer rather than relying on either alone — improves nutrient-use efficiency and long-term soil health. When giving fertilizer advice, generic N:P:K figures can be shared as a general starting reference, but the answer should make clear that a soil test and the current local Department of Agriculture / TNAU recommendation for that specific crop and season should be the final basis for exact dose, since blanket figures are not a substitute for either."
+  },
+  {
+    "id": "rice-fertilizer-schedule-splits",
+    "title": "Rice nutrient/fertilizer scheduling — typical splits",
+    "category": "fertilizer",
+    "crop": "rice",
+    "source": "TNAU Agritech Portal — Nutrient Management in Rice / Crop Production Guide",
+    "url": "https://agritech.tnau.ac.in/agriculture/agri_main_feild_%20InOrganic_biofertilizers_Rice.html",
+    "content": "For transplanted rice, TNAU's general blanket recommendation is on the order of 150:50:50 kg/ha of N:P2O5:K2O for medium/long-duration varieties in the wet season (figures vary somewhat by variety and duration — short-duration and hybrid rice have their own recommended doses, and low-nitrogen-responsive varieties like improved White Ponni use a lower nitrogen rate). The general pattern for splitting nitrogen and potassium is to apply them in roughly three to four equal splits across key growth stages — basal (at/before transplanting), active tillering, panicle initiation, and sometimes heading — rather than as one large dose; tillering and panicle-initiation splits are considered the most critical to not skip or reduce, since these stages most affect final yield. Phosphorus is usually applied fully as a basal dose since it doesn't move much in the soil once applied. Where zinc or iron deficiency has been observed (common in some Tamil Nadu rice soils), a basal application of zinc sulphate and/or iron sulphate, or a foliar spray of these at low, product-recommended concentration during tillering/panicle initiation, is commonly advised. These are general TNAU-published figures meant as a reference starting point — the exact dose for a specific field should be confirmed against that field's own soil test result and the current local agricultural extension recommendation, since over- or under-applying nitrogen in particular can affect both yield and pest/disease susceptibility."
+  },
+  {
+    "id": "micronutrient-deficiency-zinc-boron",
+    "title": "Micronutrient deficiency in Indian soils: zinc, boron and others",
+    "category": "fertilizer",
+    "crop": "general",
+    "source": "ICAR-led national soil micronutrient study (published research)",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8492626/",
+    "content": "A large ICAR-coordinated national study analysing over two lakh (200,000+) soil samples across India found widespread deficiency of secondary and micronutrients: on average about 36–37% of Indian soils were found deficient in zinc (the most widespread deficiency, and particularly common in medium black soils and mixed red-and-black soils), roughly 30% deficient in boron, and smaller but still significant proportions deficient in sulphur, iron, copper and manganese, with the exact proportion varying widely by state and soil type. Zinc availability tends to fall as soil pH rises (a large share of Indian soils are moderately alkaline), and also decreases with higher sand content, higher soil calcium carbonate content, and waterlogging — while more organic carbon in soil generally improves zinc availability. Because deficiency symptoms (stunted growth, off-colour or oddly shaped leaves, poor grain fill) can look similar across several different nutrient deficiencies and even some diseases, a soil test (which can specifically check zinc, boron, iron etc.) is the most reliable way to confirm a suspected micronutrient problem before applying any specific micronutrient fertilizer — since applying the wrong micronutrient, or applying one that isn't actually deficient, wastes money and in some cases (e.g. boron) can even cause toxicity if over-applied."
+  },
+  {
+    "id": "weed-management-principles",
+    "title": "General weed management principles",
+    "category": "general",
+    "crop": "general",
+    "source": "General agronomic extension guidance",
+    "url": "https://agritech.tnau.ac.in/",
+    "content": "Weeds compete directly with crops for water, nutrients, light and space, and left unmanaged during a crop's early critical growth period they can cause substantial yield loss even if removed later. A practical, low-cost integrated approach usually combines several tactics rather than relying only on one: land preparation that buries or exposes weed seeds to reduce their viability; using clean, weed-free seed/seedlings; maintaining proper crop spacing and healthy crop stand so the crop canopy shades out weeds faster; timely manual or mechanical weeding during the crop's critical weed-free period (often the first 3–6 weeks after sowing/transplanting for many field crops, though this varies by crop); crop rotation, which disrupts the life cycle of weeds that are adapted to a particular cropping pattern; and, where herbicide use is justified, correctly identifying the weed type (grass, broadleaf, or sedge) since herbicide selectivity depends on this — the specific herbicide, timing and dose should follow the product label and current local agricultural extension recommendation for that crop and weed type, since incorrect herbicide choice or timing can damage the crop itself."
+  },
+  {
+    "id": "mulching-water-conservation",
+    "title": "Mulching for moisture conservation and weed suppression",
+    "category": "irrigation",
+    "crop": "general",
+    "source": "General agronomic extension guidance",
+    "url": "https://agritech.tnau.ac.in/",
+    "content": "Mulching means covering the soil surface around a crop with organic material (straw, dried leaves, crop residue) or plastic sheeting. The main benefits are: reducing evaporation from the soil surface, which helps conserve soil moisture between irrigations or rainfall events (particularly valuable in low-rainfall or water-scarce conditions); suppressing weed germination and growth by blocking light; moderating soil temperature (keeping it cooler in hot weather and warmer in cold weather); and, for organic mulches, adding organic matter to the soil as they decompose, which over time can also help improve infiltration in compacted or crusting soils. Organic mulch is generally more suitable for smallholder vegetable and horticultural plots, while plastic mulch (often combined with drip irrigation) is common in commercial vegetable and fruit cultivation. Mulching is not a substitute for adequate irrigation or drainage — in soils that are already poorly drained or waterlogged, adding a thick mulch layer can sometimes worsen excess moisture around the root zone, so it is best suited to situations where the concern is moisture loss rather than excess moisture."
+  },
+  {
+    "id": "crop-rotation-principles",
+    "title": "Why crop rotation matters",
+    "category": "general",
+    "crop": "general",
+    "source": "General agronomic extension guidance",
+    "url": "https://agritech.tnau.ac.in/",
+    "content": "Growing the same crop (or crops from the same family, e.g. tomato-potato-brinjal, all solanaceous) in the same field season after season allows pests and diseases specific to that crop family to build up in the soil and surrounding area, since their host plant is always available. Rotating to a different crop family breaks this cycle by removing the host for at least one season, which is one of the simplest and lowest-cost disease/pest management tools available — this is a specifically recommended practice for both early/late blight in tomato-family crops and several soil-borne wheat diseases, among others. Rotation with a nitrogen-fixing legume (chickpea, blackgram, greengram, pigeon pea, groundnut) also naturally replenishes soil nitrogen for the following cereal crop, reducing the nitrogen fertilizer needed. Beyond disease and fertility benefits, rotation also helps manage weeds, since different crops have different competitive growth habits and are often managed with different weeding/herbicide approaches, preventing any single weed species from becoming dominant. A practical general recommendation is to avoid repeating the same crop family in the same field for at least two consecutive seasons where soil-borne disease has previously been a problem."
+  },
+  {
+    "id": "organic-farming-nutrient-sources",
+    "title": "Organic and biological nutrient sources: green manure, biofertilizers, compost",
+    "category": "fertilizer",
+    "crop": "general",
+    "source": "TNAU Agritech Portal — Organic Farming",
+    "url": "http://www.agritech.tnau.ac.in/org_farm/orgfarm_agripest.html",
+    "content": "Beyond farmyard manure and compost, several other organic/biological nutrient sources are commonly promoted in Indian agricultural extension programs. Green manuring (growing a fast-growing legume like sunn hemp or dhaincha and ploughing it into the soil before flowering) adds organic matter and fixes atmospheric nitrogen into a plant-available form. Biofertilizers — living microbial inoculants such as Azospirillum (nitrogen-fixing, used for cereals like rice) and phosphate-solubilizing bacteria — are applied to seed, seedling roots, or soil, and help make existing soil nutrients more available to the crop rather than adding large nutrient quantities themselves; they work best alongside, not instead of, adequate organic matter and balanced fertilization. Neem cake, used both as an organic manure and a mild pest deterrent, is another commonly recommended input, especially in nurseries. These organic and biological inputs are a genuine part of Integrated Nutrient Management, but they generally cannot fully replace chemical fertilizer for high-yield modern varieties on their own — they work best as a complement that improves nutrient-use efficiency, soil biology and soil structure over multiple seasons, rather than a one-season substitute for a soil-test-based fertilizer program."
+  },
+  {
+    "id": "banana-water-nutrient-management",
+    "title": "Banana water and nutrient management basics",
+    "category": "irrigation",
+    "crop": "banana",
+    "source": "TNAU Agritech Portal — Banana Expert System",
+    "url": "http://www.agritech.tnau.ac.in/expert_system/banana/irrigationmanagement.html",
+    "content": "Banana has a high total water requirement across its life cycle — roughly 900–1200 mm, met through a mix of rainfall and irrigation — and is also a heavy feeder, particularly of potassium, so both water and nutrient management need sustained attention through the whole crop duration rather than a one-time application. TNAU guidance recommends irrigating banana plantations roughly every 3–4 days during hot weather and every 7–8 days during cooler weather, with drip irrigation considered the most efficient method since it maintains steady moisture at field capacity in the root zone rather than the wet/dry swings typical of flood irrigation. Good drainage is equally important for banana — despite its high water need, standing water around the root zone for extended periods promotes root rot and reduces productivity, so fields need both adequate irrigation and adequate drainage, not one at the expense of the other. Drip fertigation (applying soluble fertilizer through the drip system) is widely recommended for banana as it allows nutrients, especially the large potassium requirement, to be supplied gradually and more efficiently than broadcast application."
+  },
+  {
+    "id": "sugarcane-basic-management",
+    "title": "Sugarcane cultivation basics — water and nutrient needs",
+    "category": "fertilizer",
+    "crop": "sugarcane",
+    "source": "TNAU Agritech Portal",
+    "url": "https://agritech.tnau.ac.in/",
+    "content": "Sugarcane is a long-duration crop (typically 10–18 months) with a high water requirement (often 1500–2500 mm across its full growth cycle) and a high nutrient demand, particularly nitrogen and potassium, reflecting its large biomass. Because of the long duration, nutrient management is usually done in multiple split applications through the crop cycle rather than concentrated early, since a single early dose cannot sustain the crop's nutrient demand across more than a year of growth, and heavy early nitrogen especially would be lost to leaching well before the crop can use it. Drip fertigation has been specifically shown in TNAU field trials (Madurai and Coimbatore) to both improve sugarcane yield and reduce total fertilizer consumption compared with conventional broadcast fertilizer plus flood irrigation, by matching nutrient supply more closely to crop uptake through the season. Adequate drainage is also important for sugarcane despite its high water need, since prolonged waterlogging can still damage the root system and reduce yield. As with other crops, the exact fertilizer schedule and dose should be based on the region's current recommended package of practices and, where available, the field's own soil test result."
+  },
+  {
+    "id": "groundnut-basic-management",
+    "title": "Groundnut cultivation basics",
+    "category": "general",
+    "crop": "groundnut",
+    "source": "General agronomic extension guidance",
+    "url": "https://agritech.tnau.ac.in/",
+    "content": "Groundnut (peanut) is a drought-tolerant oilseed and nitrogen-fixing legume best suited to well-drained sandy loam soils, since the developing pods (which form underground after the flower's peg pushes into the soil) need loose, friable soil to expand properly — heavy clay or compacted soil directly reduces pod development and makes harvesting harder. Because it fixes its own nitrogen via root nodule bacteria (rhizobia), groundnut generally needs only a modest starter dose of nitrogen fertilizer, with more emphasis on phosphorus, potassium, and calcium (gypsum applied at flowering is a commonly recommended practice, since calcium specifically supports pod and kernel development, not just general plant growth). Adequate but not excessive soil moisture during pegging and pod development is important — waterlogging at this stage is particularly damaging. Groundnut is also a good rotation crop before cereals, since the nitrogen it leaves behind in the soil benefits the following crop, and rotating away from repeated groundnut-after-groundnut cropping helps manage soil-borne diseases like collar rot and leaf spot that can build up with continuous groundnut cultivation."
+  }
+]

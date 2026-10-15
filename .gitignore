@@ -1,0 +1,53 @@
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+
+# Python and local model-training artifacts
+__pycache__/
+*.py[cod]
+training/normalized.jsonl
+models/
+# Node
+node_modules/
+dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Python
+ai-service/.venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Python generated files
+*.egg-info/
+.pytest_cache/
+
+# AI/ML models
+models/
+*.gguf
+*.bin
+*.safetensors
