@@ -279,3 +279,92 @@ async def embed_text(text: str) -> list[float]:
         return [float(x) for x in vec]
     except Exception as exc:
         raise HostedLLMError('EMBEDDING_UNAVAILABLE', f'Local embedding unavailable: {exc}')
+
+
+async def transcribe_audio_groq(
+    audio_bytes: bytes,
+    mime_type: str = "audio/webm",
+    language: str | None = None,
+) -> str:
+    """
+    Transcribes farmer voice audio using Groq's high-speed Whisper Large v3 model.
+    Biased with agricultural terminology for high domain accuracy in regional Indian languages.
+    """
+    if not is_llm_configured():
+        raise HostedLLMError(
+            'API_KEY_MISSING',
+            'No Groq API key configured for audio transcription. Add your free GROQ_API_KEY from https://console.groq.com/keys to .env.',
+            status_code=503,
+        )
+
+    if not audio_bytes:
+        return ''
+
+    url = f"{settings.groq_api_url}/audio/transcriptions"
+    headers = {
+        'Authorization': f'Bearer {settings.groq_api_key}',
+        'User-Agent': 'UzhavanAI/1.0',
+    }
+
+    # Agricultural terminology prompt guides Whisper to properly recognize Indian crop and pest names
+    agri_prompt = (
+        "UzhavanAI smart agriculture, farming advice, crop pest disease fertilizer irrigation "
+        "paddy rice wheat tomato cotton sugarcane maize groundnut neem urea soil monsoon weather"
+    )
+
+    ext = 'webm'
+    if 'wav' in mime_type:
+        ext = 'wav'
+    elif 'ogg' in mime_type:
+        ext = 'ogg'
+    elif 'mp4' in mime_type or 'm4a' in mime_type:
+        ext = 'm4a'
+    elif 'mp3' in mime_type:
+        ext = 'mp3'
+
+    filename = f"voice_input.{ext}"
+
+    if httpx is not None:
+        try:
+            files = {
+                'file': (filename, audio_bytes, mime_type),
+            }
+            data: dict[str, Any] = {
+                'model': 'whisper-large-v3',
+                'prompt': agri_prompt,
+                'response_format': 'json',
+            }
+            # Only pass language if supported ISO-639-1 code
+            if language and language in ('en', 'hi', 'ta', 'te', 'mr', 'bn'):
+                data['language'] = language
+
+            async with httpx.AsyncClient(timeout=45.0) as client:
+                resp = await client.post(url, headers=headers, files=files, data=data)
+
+                if resp.status_code == 429:
+                    retry_header = resp.headers.get('retry-after')
+                    retry_seconds = int(retry_header) if retry_header and retry_header.isdigit() else 15
+                    raise HostedLLMError(
+                        'RATE_LIMIT_EXCEEDED',
+                        f'Groq Whisper rate limit reached. Please wait {retry_seconds}s before speaking again.',
+                        status_code=429,
+                        retry_after=retry_seconds,
+                    )
+                if resp.status_code != 200:
+                    try:
+                        err_json = resp.json()
+                        err_msg = err_json.get('error', {}).get('message') or f"Groq Whisper returned HTTP {resp.status_code}"
+                    except Exception:
+                        err_msg = f"Groq Whisper returned HTTP {resp.status_code}"
+                    logger.error('Groq Whisper error (%s): %s', resp.status_code, err_msg)
+                    raise HostedLLMError('TRANSCRIPTION_ERROR', err_msg, status_code=resp.status_code)
+
+                res_json = resp.json()
+                return res_json.get('text', '').strip()
+        except httpx.TimeoutException as exc:
+            raise HostedLLMError('TIMEOUT', 'Audio transcription timed out. Please try again.', status_code=504) from exc
+        except httpx.RequestError as exc:
+            raise HostedLLMError('NETWORK_ERROR', f'Failed to connect to Groq Whisper: {exc}', status_code=502) from exc
+    else:
+        raise HostedLLMError('HTTPX_MISSING', 'httpx is required for Groq Whisper transcription.', status_code=500)
+

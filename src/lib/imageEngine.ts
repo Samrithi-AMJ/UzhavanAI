@@ -15,7 +15,20 @@
 // exactly what" — the difference is whether a specific cause could be
 // identified from the visual evidence.
 
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8787';
+function resolveBackendUrl(): string {
+  const envUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8787').replace(/\/+$/, '');
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname &&
+    window.location.hostname !== 'localhost' &&
+    window.location.hostname !== '127.0.0.1'
+  ) {
+    return envUrl.replace(/localhost|127\.0\.0\.1/, window.location.hostname);
+  }
+  return envUrl;
+}
+
+const BACKEND_URL = resolveBackendUrl();
 
 export type ImageDiagnosisStatus =
   | 'HEALTHY'

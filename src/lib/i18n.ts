@@ -198,6 +198,25 @@ type UIStrings = {
   severityMedium: string;
   severityHigh: string;
   severityUnknown: string;
+
+  // Voice search & speech strings
+  voiceSearch: string;
+  listening: string;
+  speakNow: string;
+  stopListening: string;
+  readAloud: string;
+  stopSpeaking: string;
+  autoSendIn: string;
+  sendNow: string;
+  keepEditing: string;
+  autoSendToggle: string;
+  spokenLanguage: string;
+  transcribingVoice: string;
+  voicePermissionDenied: string;
+  voiceNotSupported: string;
+  noSpeechDetected: string;
+  trySaying: string;
+  voiceInputTooltip: string;
 };
 
 export const UI: Record<Language, UIStrings> = {
@@ -271,6 +290,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'Try Again', identifiedAs: 'Identified as',
     suspectedIssueTitle: 'Suspected issue', diseaseDetectedTitle: 'Disease detected', pestDetectedTitle: 'Pest detected', unknownCropTitle: 'Crop could not be identified', unknownIssueLabel: 'Unknown crop health issue — needs closer inspection', possibleCausesLabel: 'Possible causes', recommendationLabel: 'Recommendation',
     severityLow: 'Low', severityMedium: 'Medium', severityHigh: 'High', severityUnknown: 'Unknown',
+    voiceSearch: 'Voice Search',
+    listening: 'Listening...',
+    speakNow: 'Speak now, asking your farming question...',
+    stopListening: 'Stop Listening',
+    readAloud: 'Read Aloud',
+    stopSpeaking: 'Stop Audio',
+    autoSendIn: 'Sending question in',
+    sendNow: 'Send Now',
+    keepEditing: 'Keep Editing',
+    autoSendToggle: 'Auto-send on silence',
+    spokenLanguage: 'Spoken Language',
+    transcribingVoice: 'Transcribing voice...',
+    voicePermissionDenied: 'Microphone permission was denied. Please allow microphone access in your browser settings.',
+    voiceNotSupported: 'Speech recognition is not supported in this browser. Switching to audio recording.',
+    noSpeechDetected: 'No speech detected. Please speak clearly into your microphone.',
+    trySaying: 'Try saying:',
+    voiceInputTooltip: 'Speak your farming question (Voice Search)',
   },
   hi: {
     appName: 'कृषि सलाहकार', dashboard: 'डैशबोर्ड', aiAdvisor: 'एआई सलाहकार',
@@ -343,6 +379,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'फिर से प्रयास करें', identifiedAs: 'इस रूप में पहचाना गया',
     suspectedIssueTitle: 'संदिग्ध समस्या', diseaseDetectedTitle: 'रोग का पता चला', pestDetectedTitle: 'कीट का पता चला', unknownCropTitle: 'फसल की पहचान नहीं हो सकी', unknownIssueLabel: 'अज्ञात फसल स्वास्थ्य समस्या — करीब से जांच आवश्यक', possibleCausesLabel: 'संभावित कारण', recommendationLabel: 'सिफारिश',
     severityLow: 'कम', severityMedium: 'मध्यम', severityHigh: 'उच्च', severityUnknown: 'अज्ञात',
+    voiceSearch: 'वॉयस सर्च',
+    listening: 'सुन रहा हूँ...',
+    speakNow: 'अब बोलें, अपनी खेती का सवाल पूछें...',
+    stopListening: 'सुनना बंद करें',
+    readAloud: 'बोलकर सुनाएं',
+    stopSpeaking: 'आवाज बंद करें',
+    autoSendIn: 'सवाल भेजा जा रहा है',
+    sendNow: 'अभी भेजें',
+    keepEditing: 'संपादित करें',
+    autoSendToggle: 'बोलना रुकने पर स्वतः भेजें',
+    spokenLanguage: 'बोली जाने वाली भाषा',
+    transcribingVoice: 'आवाज ट्रांसक्राइब हो रही है...',
+    voicePermissionDenied: 'माइक्रोफ़ोन की अनुमति अस्वीकृत कर दी गई। कृपया ब्राउज़र सेटिंग्स में माइक्रोफ़ोन की अनुमति दें।',
+    voiceNotSupported: 'इस ब्राउज़र में स्पीच रिकग्निशन समर्थित नहीं है। ऑडियो रिकॉर्डिंग मोड पर स्विच कर रहे हैं।',
+    noSpeechDetected: 'कोई आवाज नहीं सुनी गई। कृपया माइक्रोफ़ोन में स्पष्ट रूप से बोलें।',
+    trySaying: 'यह बोलकर देखें:',
+    voiceInputTooltip: 'बोलकर खेती का सवाल पूछें (वॉयस सर्च)',
   },
   mr: {
     appName: 'कृषी सल्लागार', dashboard: 'डॅशबोर्ड', aiAdvisor: 'एआय सल्लागार',
@@ -415,6 +468,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'पुन्हा प्रयत्न करा', identifiedAs: 'असे ओळखले गेले',
     suspectedIssueTitle: 'संशयित समस्या', diseaseDetectedTitle: 'रोग आढळला', pestDetectedTitle: 'कीड आढळली', unknownCropTitle: 'पिकाची ओळख पटली नाही', unknownIssueLabel: 'अज्ञात पीक आरोग्य समस्या — बारकाईने तपासणी आवश्यक', possibleCausesLabel: 'संभाव्य कारणे', recommendationLabel: 'शिफारस',
     severityLow: 'कमी', severityMedium: 'मध्यम', severityHigh: 'जास्त', severityUnknown: 'अज्ञात',
+    voiceSearch: 'व्हॉइस सर्च',
+    listening: 'ऐकत आहे...',
+    speakNow: 'आता बोला, तुमचा शेतीविषयक प्रश्न विचारा...',
+    stopListening: 'ऐकणे थांबवा',
+    readAloud: 'वाचून दाखवा',
+    stopSpeaking: 'आवाज थांबवा',
+    autoSendIn: 'प्रश्न पाठवत आहे',
+    sendNow: 'आत्ता पाठवा',
+    keepEditing: 'संपादन करा',
+    autoSendToggle: 'शांत झाल्यावर आपोआप पाठवा',
+    spokenLanguage: 'बोलण्याची भाषा',
+    transcribingVoice: 'आवाज रूपांतरित होत आहे...',
+    voicePermissionDenied: 'मायक्रोफोन परवानगी नाकारली गेली. कृपया ब्राउझर सेटिंग्जमध्ये मायक्रोफोन सुरू करा.',
+    voiceNotSupported: 'या ब्राउझरमध्ये स्पीच रेकग्निशन समर्थित नाही. ऑडिओ रेकॉर्डिंग मोडवर स्विच करत आहे.',
+    noSpeechDetected: 'कोणताही आवाज ऐकू आला नाही. कृपया मायक्रोफोनमध्ये स्पष्टपणे बोला.',
+    trySaying: 'हे बोलून पहा:',
+    voiceInputTooltip: 'बोलून शेतीचा प्रश्न विचारा (व्हॉइस सर्च)',
   },
   ta: {
     appName: 'விவசாய ஆலோசகர்', dashboard: 'டாஷ்போர்டு', aiAdvisor: 'ஏஐ ஆலோசகர்',
@@ -487,6 +557,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'மீண்டும் முயற்சிக்கவும்', identifiedAs: 'இவ்வாறு அடையாளம் காணப்பட்டது',
     suspectedIssueTitle: 'சந்தேகிக்கப்படும் பிரச்சினை', diseaseDetectedTitle: 'நோய் கண்டறியப்பட்டது', pestDetectedTitle: 'பூச்சி கண்டறியப்பட்டது', unknownCropTitle: 'பயிரை அடையாளம் காண முடியவில்லை', unknownIssueLabel: 'அறியப்படாத பயிர் ஆரோக்கிய பிரச்சினை — நெருக்கமாக பரிசோதிக்க வேண்டும்', possibleCausesLabel: 'சாத்தியமான காரணங்கள்', recommendationLabel: 'பரிந்துரை',
     severityLow: 'குறைவு', severityMedium: 'மிதமானது', severityHigh: 'அதிகம்', severityUnknown: 'தெரியவில்லை',
+    voiceSearch: 'குரல் தேடல்',
+    listening: 'கேட்கிறது...',
+    speakNow: 'இப்போது பேசுங்கள், உங்கள் விவசாயக் கேள்வியைக் கேளுங்கள்...',
+    stopListening: 'பேச்சை நிறுத்து',
+    readAloud: 'படித்துக் காட்டு',
+    stopSpeaking: 'ஆடியோவை நிறுத்து',
+    autoSendIn: 'கேள்வி அனுப்பப்படுகிறது',
+    sendNow: 'உடனே அனுப்பு',
+    keepEditing: 'திருத்துங்கள்',
+    autoSendToggle: 'பேசி முடித்ததும் தானாக அனுப்பு',
+    spokenLanguage: 'பேசும் மொழி',
+    transcribingVoice: 'குரல் உரையாக மாற்றப்படுகிறது...',
+    voicePermissionDenied: 'மைக்ரோஃபோன் அனுமதி மறுக்கப்பட்டது. உங்கள் உலாவி அமைப்புகளில் மைக்ரோஃபோன் அனுமதியை வழங்கவும்.',
+    voiceNotSupported: 'இந்த உலாவியில் பேச்சு அறிதல் வசதி இல்லை. ஆடியோ பதிவு முறைக்கு மாறுகிறது.',
+    noSpeechDetected: 'குரல் எதுவும் கேட்கவில்லை. தயவுசெய்து மைக்ரோஃபோனில் தெளிவாகப் பேசவும்.',
+    trySaying: 'இப்படி கேட்டுப் பாருங்கள்:',
+    voiceInputTooltip: 'விவசாயக் கேள்வியைப் பேசித் தேடுங்கள் (குரல் தேடல்)',
   },
   te: {
     appName: 'వ్యవసాయ సలహాదారు', dashboard: 'డాష్‌బోర్డ్', aiAdvisor: 'ఏఐ సలహాదారు',
@@ -559,6 +646,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'మళ్లీ ప్రయత్నించండి', identifiedAs: 'ఇలా గుర్తించబడింది',
     suspectedIssueTitle: 'అనుమానిత సమస్య', diseaseDetectedTitle: 'వ్యాధి గుర్తించబడింది', pestDetectedTitle: 'పురుగు గుర్తించబడింది', unknownCropTitle: 'పంటను గుర్తించలేకపోయాం', unknownIssueLabel: 'తెలియని పంట ఆరోగ్య సమస్య — దగ్గరగా పరిశీలన అవసరం', possibleCausesLabel: 'సాధ్యమైన కారణాలు', recommendationLabel: 'సిఫార్సు',
     severityLow: 'తక్కువ', severityMedium: 'మధ్యస్థం', severityHigh: 'అధికం', severityUnknown: 'తెలియదు',
+    voiceSearch: 'వాయిస్ శోధన',
+    listening: 'వింటోంది...',
+    speakNow: 'ఇప్పుడు మాట్లాడండి, మీ వ్యవసాయ ప్రశ్నను అడగండి...',
+    stopListening: 'వినడం ఆపు',
+    readAloud: 'వినండి',
+    stopSpeaking: 'ఆడియో ఆపు',
+    autoSendIn: 'ప్రశ్న పంపబడుతోంది',
+    sendNow: 'ఇప్పుడే పంపు',
+    keepEditing: 'సవరించండి',
+    autoSendToggle: 'నిశ్శబ్దం తర్వాత స్వయంచాలకంగా పంపు',
+    spokenLanguage: 'మాట్లాడే భాష',
+    transcribingVoice: 'వాయిస్ లిప్యంతరీకరణ జరుగుతోంది...',
+    voicePermissionDenied: 'మైక్రోఫోన్ అనుమతి నిరాకరించబడింది. దయచేసి బ్రౌజర్ సెట్టింగ్‌లలో మైక్రోఫోన్ అనుమతి ఇవ్వండి.',
+    voiceNotSupported: 'ఈ బ్రౌజర్‌లో స్పీచ్ రికగ్నిషన్ సపోర్ట్ లేదు. ఆడియో రికార్డింగ్ మోడ్‌కు మారుతోంది.',
+    noSpeechDetected: 'వాయిస్ గుర్తించబడలేదు. దయచేసి మైక్రోఫోన్‌లో స్పష్టంగా మాట్లాడండి.',
+    trySaying: 'ఇలా మాట్లాడి చూడండి:',
+    voiceInputTooltip: 'మాట్లాడి వ్యవసాయ ప్రశ్నను అడగండి (వాయిస్ సెర్చ్)',
   },
   bn: {
     appName: 'কৃষি উপদেষ্টা', dashboard: 'ড্যাশবোর্ড', aiAdvisor: 'এআই উপদেষ্টা',
@@ -631,6 +735,23 @@ export const UI: Record<Language, UIStrings> = {
     retry: 'আবার চেষ্টা করুন', identifiedAs: 'হিসেবে চিহ্নিত হয়েছে',
     suspectedIssueTitle: 'সন্দেহভাজন সমস্যা', diseaseDetectedTitle: 'রোগ শনাক্ত হয়েছে', pestDetectedTitle: 'পোকা শনাক্ত হয়েছে', unknownCropTitle: 'ফসল শনাক্ত করা যায়নি', unknownIssueLabel: 'অজানা ফসল স্বাস্থ্য সমস্যা — কাছাকাছি থেকে পরীক্ষা প্রয়োজন', possibleCausesLabel: 'সম্ভাব্য কারণ', recommendationLabel: 'সুপারিশ',
     severityLow: 'কম', severityMedium: 'মাঝারি', severityHigh: 'বেশি', severityUnknown: 'অজানা',
+    voiceSearch: 'ভয়েস অনুসন্ধান',
+    listening: 'শুনছি...',
+    speakNow: 'এখন বলুন, আপনার কৃষিকাজের প্রশ্ন জিজ্ঞাসা করুন...',
+    stopListening: 'শোনা বন্ধ করুন',
+    readAloud: 'পড়ে শোনান',
+    stopSpeaking: 'অডিও বন্ধ করুন',
+    autoSendIn: 'প্রশ্ন পাঠানো হচ্ছে',
+    sendNow: 'এখনই পাঠান',
+    keepEditing: 'সম্পাদনা করুন',
+    autoSendToggle: 'কথা শেষ হলে স্বয়ংক্রিয়ভাবে পাঠান',
+    spokenLanguage: 'কথ্য ভাষা',
+    transcribingVoice: 'ভয়েস টেক্সটে রূপান্তর হচ্ছে...',
+    voicePermissionDenied: 'মাইক্রোফোনের অনুমতি প্রত্যাখ্যাত হয়েছে। অনুগ্রহ করে ব্রাউজার সেটিংসে মাইক্রোফোন অ্যাক্সেসের অনুমতি দিন।',
+    voiceNotSupported: 'এই ব্রাউজারে স্পিচ রিকগনিশন সমর্থিত নয়। অডিও রেকর্डिंग মোডে পরিবর্তন করা হচ্ছে।',
+    noSpeechDetected: 'কোনো কথা সনাক্ত করা যায়নি। অনুগ্রহ করে মাইক্রোফোনে স্পষ্টভাবে বলুন।',
+    trySaying: 'এটি বলে দেখুন:',
+    voiceInputTooltip: 'কৃষিকাজের প্রশ্ন মুখে বলুন (ভয়েস অনুসন্ধান)',
   },
 };
 

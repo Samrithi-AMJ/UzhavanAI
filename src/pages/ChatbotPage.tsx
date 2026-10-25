@@ -15,7 +15,22 @@ import {
 } from '../lib/chatEngine';
 import { loadFarmBoundary } from '../lib/farm';
 import { fetchWeather } from '../lib/weather';
-import { MessageSquare, Send, Loader2, Trash2, Bot, User as UserIcon, Sparkles, AlertCircle } from 'lucide-react';
+import { t } from '../lib/i18n';
+import VoiceSearchPanel from '../components/VoiceSearchPanel';
+import { speakText, stopSpeaking, isSpeaking } from '../lib/voiceSearch';
+import {
+  MessageSquare,
+  Send,
+  Loader2,
+  Trash2,
+  Bot,
+  User as UserIcon,
+  Sparkles,
+  AlertCircle,
+  Mic,
+  Volume2,
+  Square,
+} from 'lucide-react';
 
 const SUGGESTIONS = [
   'How do I manage pests in rice?',
@@ -37,14 +52,18 @@ type UIMessage = ChatMessage & { isError?: boolean; sources?: KnowledgeSource[];
 // only when real sources were actually retrieved and used.
 
 export default function ChatbotPage() {
-  const { user, profile, language } = useAuth();
+  const { user, profile, language, setLanguage } = useAuth();
+  const tr = t(language);
   const [messages, setMessages] = useState<UIMessage[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
   const [inputError, setInputError] = useState<string | null>(null);
   const [health, setHealth] = useState<AdvisorHealth | null>(null);
+  const [voicePanelOpen, setVoicePanelOpen] = useState(false);
+  const [speakingMessageId, setSpeakingMessageId] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const farmerContextRef = useRef<FarmerContext | null>(null);
   const weatherContextRef = useRef<WeatherContext>('unavailable');
@@ -138,9 +157,46 @@ export default function ChatbotPage() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' });
   }, [messages]);
 
+  useEffect(() => {
+    return () => {
+      stopSpeaking();
+    };
+  }, []);
+
+  const handleToggleSpeak = (messageId: string, content: string) => {
+    if (speakingMessageId === messageId && isSpeaking()) {
+      stopSpeaking();
+      setSpeakingMessageId(null);
+      return;
+    }
+
+    setSpeakingMessageId(messageId);
+    speakText(content, language, {
+      onStart: () => setSpeakingMessageId(messageId),
+      onEnd: () => setSpeakingMessageId(null),
+      onError: () => setSpeakingMessageId(null),
+    });
+  };
+
+  const handleVoiceTranscriptComplete = (text: string, autoSubmit?: boolean) => {
+    if (!text.trim()) return;
+    if (autoSubmit) {
+      sendMessage(text);
+    } else {
+      setInput(text);
+      if (inputError) setInputError(null);
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+    }
+  };
+
   async function sendMessage(text: string) {
     const trimmed = text.trim();
     if (!user || sending) return;
+
+    stopSpeaking();
+    setSpeakingMessageId(null);
 
     if (!trimmed) {
       setInputError(friendlyAdvisorMessage(new AdvisorError('EMPTY_MESSAGE', ''), language));
@@ -267,10 +323,26 @@ export default function ChatbotPage() {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary-100">
               <Sparkles className="h-8 w-8 text-primary-600" />
             </div>
-            <h2 className="font-display text-lg font-semibold text-gray-900">Ask me anything about farming</h2>
+            <h2 className="font-display text-lg font-semibold text-gray-900">{tr.askAnything}</h2>
             <p className="mt-1 max-w-sm text-sm text-gray-500">
               I can help with crop selection, pest management, irrigation, fertilizers, and more.
             </p>
+
+            {/* Quick Voice Search CTA */}
+            <div className="mt-5 flex flex-col items-center">
+              <button
+                type="button"
+                onClick={() => setVoicePanelOpen(true)}
+                className="group flex items-center gap-2.5 rounded-full border border-primary-300 bg-gradient-to-r from-primary-50 via-white to-primary-50 px-5 py-2.5 text-xs font-semibold text-primary-700 shadow-sm transition-all hover:border-primary-500 hover:shadow-md hover:scale-105"
+              >
+                <div className="relative flex h-6 w-6 items-center justify-center rounded-full bg-primary-600 text-white shadow-sm transition-transform group-hover:scale-110">
+                  <Mic className="h-3.5 w-3.5" />
+                </div>
+                <span>{tr.voiceSearch}</span>
+                <span className="text-[11px] font-normal text-primary-600 opacity-80">({tr.speakNow})</span>
+              </button>
+            </div>
+
             <div className="mt-6 grid w-full max-w-lg gap-2 sm:grid-cols-2">
               {SUGGESTIONS.map((s) => (
                 <button
@@ -306,6 +378,8 @@ export default function ChatbotPage() {
                     : 'bg-gray-100 text-gray-800'
                 }`}>
                   <p className="text-sm leading-relaxed whitespace-pre-wrap">{msg.content}</p>
+
+                  {/* Sources list */}
                   {msg.sources && msg.sources.length > 0 && (
                     <div className="mt-2 border-t border-gray-200 pt-2">
                       <p className="text-xs font-medium text-gray-500">Sources:</p>
@@ -322,6 +396,39 @@ export default function ChatbotPage() {
                           </li>
                         ))}
                       </ul>
+                    </div>
+                  )}
+
+                  {/* Read Aloud Text-to-Speech button for assistant responses */}
+                  {msg.role === 'assistant' && !msg.isError && (
+                    <div className="mt-2.5 flex items-center justify-between border-t border-gray-200/60 pt-2">
+                      <button
+                        type="button"
+                        onClick={() => handleToggleSpeak(msg.id, msg.content)}
+                        className={`flex items-center gap-1.5 rounded-lg px-2 py-1 text-xs font-medium transition-colors ${
+                          speakingMessageId === msg.id
+                            ? 'bg-primary-100 text-primary-800 border border-primary-300'
+                            : 'text-gray-500 hover:bg-gray-200/70 hover:text-gray-800'
+                        }`}
+                        title={speakingMessageId === msg.id ? tr.stopSpeaking : tr.readAloud}
+                      >
+                        {speakingMessageId === msg.id ? (
+                          <>
+                            <Square className="h-3 w-3 fill-current text-primary-700" />
+                            <span>{tr.stopSpeaking}</span>
+                            <span className="flex gap-0.5 items-center ml-1">
+                              <span className="h-2 w-0.5 animate-bounce bg-primary-600 rounded-full" />
+                              <span className="h-3 w-0.5 animate-bounce bg-primary-600 rounded-full [animation-delay:150ms]" />
+                              <span className="h-2 w-0.5 animate-bounce bg-primary-600 rounded-full [animation-delay:300ms]" />
+                            </span>
+                          </>
+                        ) : (
+                          <>
+                            <Volume2 className="h-3.5 w-3.5 text-gray-500" />
+                            <span>{tr.readAloud}</span>
+                          </>
+                        )}
+                      </button>
                     </div>
                   )}
                 </div>
@@ -350,16 +457,48 @@ export default function ChatbotPage() {
         className="mt-4"
       >
         {inputError && <p className="mb-2 text-sm text-error-600">{inputError}</p>}
-        <div className="flex gap-3">
-          <input
-            value={input}
-            onChange={(e) => { setInput(e.target.value); if (inputError) setInputError(null); }}
-            placeholder="Type your farming question..."
-            className="input-field flex-1"
-            disabled={sending}
-            maxLength={MAX_MESSAGE_LENGTH}
-          />
-          <button type="submit" disabled={sending || !input.trim()} className="btn-primary px-5">
+
+        {/* Voice Search HUD Panel */}
+        <VoiceSearchPanel
+          active={voicePanelOpen}
+          language={language}
+          onLanguageChange={(newLang) => setLanguage(newLang)}
+          onTranscriptComplete={handleVoiceTranscriptComplete}
+          onClose={() => setVoicePanelOpen(false)}
+        />
+
+        <div className="flex gap-2 sm:gap-3">
+          <div className="relative flex-1">
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => { setInput(e.target.value); if (inputError) setInputError(null); }}
+              placeholder={tr.typeQuestion}
+              className="input-field w-full pr-12"
+              disabled={sending}
+              maxLength={MAX_MESSAGE_LENGTH}
+            />
+            {/* Inline mic button inside the right side of the input field */}
+            <button
+              type="button"
+              onClick={() => setVoicePanelOpen(!voicePanelOpen)}
+              className={`absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-lg transition-all ${
+                voicePanelOpen
+                  ? 'bg-primary-600 text-white shadow-md'
+                  : 'text-gray-400 hover:bg-gray-100 hover:text-primary-600'
+              }`}
+              title={tr.voiceInputTooltip}
+            >
+              <Mic className={`h-4 w-4 ${voicePanelOpen ? 'animate-pulse' : ''}`} />
+            </button>
+          </div>
+
+          <button
+            type="submit"
+            disabled={sending || !input.trim()}
+            className="btn-primary px-5"
+            title="Send Message"
+          >
             {sending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
           </button>
         </div>

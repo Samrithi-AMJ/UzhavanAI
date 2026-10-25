@@ -1,6 +1,7 @@
 import { type ReactNode, useState } from 'react';
 import { useAuth } from '../lib/auth';
 import { LANGUAGES, t, type Language } from '../lib/i18n';
+import InstallAppBanner from './InstallAppBanner';
 import {
   Sprout, LayoutDashboard, MessageSquare, CloudSun, Wheat,
   LogOut, User as UserIcon, ScanLine, Globe, Check, Map as MapIcon,
@@ -58,6 +59,9 @@ export default function Layout({ current, onNavigate, children }: Props) {
             );
           })}
         </nav>
+
+        {/* Install App button in sidebar */}
+        <InstallAppBanner language={language} variant="sidebar" />
 
         {/* Language selector */}
         <div className="px-3 pb-2">
@@ -177,6 +181,9 @@ export default function Layout({ current, onNavigate, children }: Props) {
           {children}
         </div>
       </main>
+
+      {/* Floating mobile install prompt */}
+      <InstallAppBanner language={language} variant="floating" />
     </div>
   );
 }

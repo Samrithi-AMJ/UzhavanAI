@@ -1,10 +1,16 @@
 import asyncio
 import base64
 import io
+import sys
 from PIL import Image
 
-from app.main import app, health, chat_endpoint, image_diagnosis_endpoint
-from app.schemas import ChatRequest, ImageDiagnosisRequest
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+
+from app.main import app, health, chat_endpoint, image_diagnosis_endpoint, transcribe_endpoint
+from app.schemas import ChatRequest, ImageDiagnosisRequest, TranscribeRequest
+from app.hosted_llm import HostedLLMError
+from fastapi import HTTPException
 
 
 def make_test_image(color=(34, 139, 34), size=(200, 200)):
@@ -65,6 +71,25 @@ async def run_tests():
     print("    Status:", img_resp.status)
     print("    Confidence:", img_resp.confidence)
     print("    Recommendation preview:", img_resp.recommendation[:100], "...")
+
+    # 5. Test Audio Transcribe Endpoint
+    print("\n[5] Audio Transcription Endpoint Test:")
+    try:
+        # Test empty audio error handling
+        await transcribe_endpoint(TranscribeRequest(audio=""))
+        assert False, "Should have raised 400 for empty audio"
+    except HTTPException as exc:
+        print("    Empty audio validation (HTTP 400): PASS")
+        assert exc.status_code == 400
+
+    try:
+        # Test valid base64 payload
+        dummy_audio = base64.b64encode(b"RIFFdummywavecontent").decode('utf-8')
+        trans_res = await transcribe_endpoint(TranscribeRequest(audio=dummy_audio, language="ta"))
+        print("    Transcription result:", trans_res.text)
+    except HostedLLMError as h_err:
+        print("    Transcription graceful error:", h_err.code, "-", h_err.message[:50])
+        assert h_err.code in ("API_KEY_MISSING", "NETWORK_ERROR", "TIMEOUT", "TRANSCRIPTION_ERROR")
 
     print("\n=== All endpoint unit tests executed successfully! ===")
 

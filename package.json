@@ -14,9 +14,12 @@
     "ai:prepare-data": "python training/prepare_dataset.py",
     "ai:train": "python training/train_lora.py",
     "ai:evaluate": "python training/evaluate.py",
-    "ingest:knowledge": "node scripts/ingest_knowledge.js"
+    "ingest:knowledge": "node scripts/ingest_knowledge.js",
+    "mobile:sync": "npm run build && npx cap sync android",
+    "mobile:open": "npx cap open android"
   },
   "dependencies": {
+    "@capacitor/core": "^8.5.3",
     "@supabase/supabase-js": "^2.57.4",
     "dotenv": "^17.4.2",
     "leaflet": "^1.9.4",
@@ -26,6 +29,8 @@
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
     "@eslint/js": "^9.9.1",
     "@types/leaflet": "^1.9.12",
     "@types/react": "^18.3.5",

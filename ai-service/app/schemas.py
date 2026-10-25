@@ -49,6 +49,17 @@ class ImageDiagnosisResponse(BaseModel):
     confidence: float = 0.0
 
 
+class TranscribeRequest(BaseModel):
+    audio: str = Field(..., description="Base64 encoded audio string")
+    mime_type: str = Field(default="audio/webm", description="MIME type of the audio")
+    language: str | None = Field(default=None, description="ISO language code, e.g. ta, hi, en")
+
+
+class TranscribeResponse(BaseModel):
+    text: str
+    language: str | None = None
+
+
 # Legacy endpoints support
 class GenerateRequest(BaseModel):
     question: str = Field(..., min_length=1)

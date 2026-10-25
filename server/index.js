@@ -113,6 +113,9 @@ const server = http.createServer(async (req, res) => {
     if (url.pathname === '/api/image-diagnosis' || url.pathname === '/image-diagnosis') {
       return await proxyToFastApi(req, res, '/api/image-diagnosis');
     }
+    if (url.pathname === '/api/transcribe' || url.pathname === '/transcribe') {
+      return await proxyToFastApi(req, res, '/api/transcribe');
+    }
     return sendJson(res, 404, { error: 'NOT_FOUND', message: `Unknown endpoint: ${url.pathname}` });
   } catch (err) {
     console.error('[UzhavanAI Gateway] Unhandled error:', err);

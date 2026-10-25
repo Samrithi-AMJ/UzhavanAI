@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 import logging
 from typing import Any
 
@@ -15,6 +16,7 @@ from .hosted_llm import (
     get_model_name,
     get_vision_model_name,
     is_llm_configured,
+    transcribe_audio_groq,
     HostedLLMError,
 )
 from .rag_retriever import load_local_knowledge
@@ -23,6 +25,8 @@ from .schemas import (
     ChatResponse,
     ImageDiagnosisRequest,
     ImageDiagnosisResponse,
+    TranscribeRequest,
+    TranscribeResponse,
     CompleteRequest,
     CompleteResponse,
     GenerateRequest,
@@ -130,6 +134,28 @@ async def image_diagnosis_endpoint(req: ImageDiagnosisRequest):
         raise
     except Exception as exc:
         logger.exception('Image diagnosis unhandled exception')
+        raise HTTPException(status_code=500, detail=str(exc)) from exc
+
+
+@app.post('/api/transcribe', response_model=TranscribeResponse)
+@app.post('/transcribe', response_model=TranscribeResponse)
+async def transcribe_endpoint(req: TranscribeRequest):
+    if not req.audio or not req.audio.strip():
+        raise HTTPException(status_code=400, detail='No audio provided.')
+
+    try:
+        raw_b64 = req.audio.split(',', 1)[1] if ',' in req.audio else req.audio
+        audio_bytes = base64.b64decode(raw_b64.strip())
+        text = await transcribe_audio_groq(
+            audio_bytes=audio_bytes,
+            mime_type=req.mime_type or 'audio/webm',
+            language=req.language,
+        )
+        return TranscribeResponse(text=text, language=req.language)
+    except HostedLLMError:
+        raise
+    except Exception as exc:
+        logger.exception('Audio transcription unhandled exception')
         raise HTTPException(status_code=500, detail=str(exc)) from exc
 
 

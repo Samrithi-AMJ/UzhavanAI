@@ -47,7 +47,20 @@ export class AdvisorError extends Error {
   }
 }
 
-const BACKEND_URL = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8787').replace(/\/+$/, '');
+function resolveBackendUrl(): string {
+  const envUrl = (import.meta.env.VITE_BACKEND_URL || 'http://localhost:8787').replace(/\/+$/, '');
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname &&
+    window.location.hostname !== 'localhost' &&
+    window.location.hostname !== '127.0.0.1'
+  ) {
+    return envUrl.replace(/localhost|127\.0\.0\.1/, window.location.hostname);
+  }
+  return envUrl;
+}
+
+const BACKEND_URL = resolveBackendUrl();
 
 const FRIENDLY_MESSAGES: Record<AdvisorErrorCode, Record<Language, string>> = {
   BACKEND_UNREACHABLE: {
@@ -221,3 +234,38 @@ export async function checkAdvisorHealth(): Promise<AdvisorHealth> {
     return { aiServiceReachable: false, model: 'UzhavanAI', modelInstalled: false, state: 'OFFLINE' };
   }
 }
+
+/**
+ * Transcribes audio via the backend Whisper endpoint (Groq whisper-large-v3).
+ * Used as high-accuracy fallback or for browsers where Web Speech API is unavailable.
+ */
+export async function transcribeAudioBackend(
+  audioBase64: string,
+  mimeType: string = 'audio/webm',
+  language?: Language
+): Promise<string> {
+  const res = await fetch(`${BACKEND_URL}/api/transcribe`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      audio: audioBase64,
+      mime_type: mimeType,
+      language,
+    }),
+  });
+
+  if (!res.ok) {
+    let errMsg = `Transcription failed (${res.status})`;
+    try {
+      const data = await res.json();
+      if (data?.message) errMsg = data.message;
+    } catch {
+      // Ignore
+    }
+    throw new Error(errMsg);
+  }
+
+  const data = await res.json();
+  return (data?.text || '').trim();
+}
+
