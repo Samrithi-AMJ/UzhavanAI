@@ -7,7 +7,7 @@
 import './loadEnv.js';
 import http from 'node:http';
 
-const PORT = Number(process.env.BACKEND_PORT || 8787);
+const PORT = Number(process.env.PORT || process.env.BACKEND_PORT || 8787);
 const AI_SERVICE_URL = (process.env.AI_SERVICE_URL || 'http://127.0.0.1:8001').replace(/\/+$/, '');
 const AI_SERVICE_TIMEOUT_MS = Number(process.env.AI_SERVICE_TIMEOUT_MS || 60000);
 
